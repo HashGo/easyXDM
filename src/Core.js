@@ -234,6 +234,15 @@ function getParentObject(){
     return obj.easyXDM;
 }
 
+
+/**
+ * Enable custome iframe prefix names
+ */
+easyXDM.setiFramePrefix = function(prefix){
+  IFRAME_PREFIX = prefix;
+}
+
+
 /**
  * Removes easyXDM variable from the global scope. It also returns control
  * of the easyXDM variable to whatever code used it before.
@@ -253,7 +262,7 @@ function noConflict(ns){
     window.easyXDM = _easyXDM;
     namespace = ns;
     if (namespace) {
-        IFRAME_PREFIX = "easyXDM_" + namespace.replace(".", "_") + "_";
+        IFRAME_PREFIX = IFRAME_PREFIX + "_" + namespace.replace(".", "_") + "_";
     }
     return easyXDM;
 }
