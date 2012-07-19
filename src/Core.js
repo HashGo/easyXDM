@@ -33,7 +33,7 @@ var reDoubleSlash = /([^:])\/\//g; // matches // anywhere but in the protocol
 var namespace = ""; // stores namespace under which easyXDM object is stored on the page (empty if object is global)
 var easyXDM = {};
 var _easyXDM = window.easyXDM; // map over global easyXDM in case of overwrite
-var IFRAME_PREFIX = "easyXDM_";
+var IFRAME_PREFIX = "hg_";
 var HAS_NAME_PROPERTY_BUG;
 var useHash = false; // whether to use the hash over the query
 var flashVersion; // will be set if using flash
@@ -234,13 +234,6 @@ function getParentObject(){
     return obj.easyXDM;
 }
 
-
-/**
- * Enable custome iframe prefix names
- */
-easyXDM.setiFramePrefix = function(prefix){
-  IFRAME_PREFIX = prefix;
-}
 
 
 /**
